@@ -1,3 +1,9 @@
+from openai import OpenAI
+
+model_name = 'gpt-4o'
+personal_openai_key = 'INSERT_YOUR_OPENAI_API_KEY_HERE'
+client = OpenAI(api_key=personal_openai_key)
+
 with open('all_responses_lines.txt', 'rt') as file:
     all_responses_lines = file.read()
 
@@ -24,4 +30,5 @@ analyze_review_response = client.chat.completions.create(
 )
 analyze_review_text = analyze_review_response.choices[0].message.content
 
+# Выводим на экран ответ от ChatGPT - список тем для всех отзывов
 print(analyze_review_text)
