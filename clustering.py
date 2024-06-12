@@ -70,7 +70,7 @@ plt.show()
 # Теперь определим общую тему отзывов для каждого из 25 кластеров
 
 # получаем все отзывы 
-strings = [item[0] for item in response_embeddings]
+strings = [item[0] for item in reviews_embeddings]
 
 for cluster_id in range(num_clusters):
     # Выводим ID кластера для дебага
